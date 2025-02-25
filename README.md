@@ -1,57 +1,58 @@
 # ag
-自己实现命令 `ag` 在命令行中调用 `DeepSeek:v3` 大模型。
+Implement the `ag` command to call the `DeepSeek:v3` model in the command line.
 
-## 效果如下
+## The effect is as follows
 
 ![intro](https://github.com/user-attachments/assets/fe004408-bfc6-4983-9339-a7ead9a2e081)
 
-## 如何在你的电脑安装
+## how to install in your Linux
 
-### 系统中要提前安装的软件
+### Prerequisites
 
 - Python 3.10.12
 - pip 25.0.1
 
-### 要安装的软件包
+### Dependencies to install
 
 - openai
 ```shell
 pip install openai
 ```
-国内安装可以使用镜像安装，命令如下：
+For domestic installation, you can use mirror installation, the command is as follows：
 ```shell
 pip install openai -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-### 克隆本项目到本地
+### Clone this repo to local
 
-- 克隆本项目
+- clone repo
 ```shell
 git clone https://github.com/shenjy712/ag.git
 ```
-- 将本项目可控下来后，主要看 `.env` 这个文件
+- `.env` file
 ```
 API_KEY=
 API_BASE_URI=https://api.siliconflow.cn
 MODEL=deepseek-ai/DeepSeek-V3
 ```
-> 上面用到的大模型 API 是硅基流动的 API。大家也可以使用 硅基流动的API，[注册硅基流动](https://cloud.siliconflow.cn/i/BLu934tI)
+> The large model API used above is the API of Silicon Flow. You can also use the API of Silicon Flow, [Register Silicon Flow](https://cloud.siliconflow.cn/i/BLu934tI)
 
-- 生成 API 密钥
+- generate API KEY
 ![1740459963892](https://github.com/user-attachments/assets/c2556ff3-4c75-47ea-b735-a6b0368c6da5)
 
-- 生成 API 密钥之后，将 API 密钥填入 `.env` 文件中的 `API_KEY=` 后面
-- 执行下面命令
+- After generating the API key, fill in the API key after `API_KEY=` in the `.env` file
+- execute following command
 ```shell
-# 添加可执权限
+# Add executable permissions
 chmod +x ag.py
 
-# 将命令拷贝到 /usr/local/bin 目录下, 并将名字改成 ag
+# Copy the command to the /usr/local/bin directory and change the name to ag
 mv ag.py /usr/local/bin/ag
 
-# 把 .env 文件也移动到同样的目录
+# Move the .env file to the same directory
 mv .env /usr/local/bin/
 ```
-- 到现在，大家就可以在命令行中使用 `ag` 命令调用 `DeepSeek:v3` 模型了。
+- Now you can use the `ag` command in the command line to call the `DeepSeek:v3` model.
 
-完~
+over~
+
