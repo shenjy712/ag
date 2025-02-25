@@ -5,7 +5,7 @@
 
 ![intro](https://github.com/user-attachments/assets/fe004408-bfc6-4983-9339-a7ead9a2e081)
 
-## 如何在你的电脑上部署
+## 如何在你的电脑安装
 
 ### 系统中要提前安装的软件
 
