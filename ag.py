@@ -24,7 +24,7 @@ def ai_mode():
     print("Entering AI mode. Type your prompt (or 'exit' to quit):")
     while True:
         # Get user input
-        prompt = input(">>> ")
+        prompt = input("prompt> ")
 
         # Check for exit condition
         if prompt.lower() in ["exit", "quit"]:
