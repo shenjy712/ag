@@ -1,6 +1,7 @@
 import sys
 from openai import OpenAI
 import os
+import signal
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
@@ -19,6 +20,13 @@ client = OpenAI(
     api_key=API_KEY,
     base_url=API_BASE_URI
 )
+
+def signal_handler(sig, frame):
+    print()
+    sys.exit(0)
+
+# Set the signal handler for SIGINT (Ctrl+C)
+signal.signal(signal.SIGINT, signal_handler)
 
 def ai_mode():
     print("Entering AI mode. Type your prompt (or 'exit' to quit):")
@@ -47,6 +55,7 @@ def ai_mode():
                 if chunk.choices[0].delta.content is not None:
                     print(chunk.choices[0].delta.content, end="", flush=True)
             print()  # Newline after the response finishes
+            print()
         except Exception as e:
             print(f"Error: {e}")
 
