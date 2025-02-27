@@ -1,4 +1,5 @@
 import sys
+import readline
 from openai import OpenAI
 import os
 import signal
@@ -23,6 +24,7 @@ client = OpenAI(
 
 def signal_handler(sig, frame):
     print()
+    print("Exiting AI mode.")
     sys.exit(0)
 
 # Set the signal handler for SIGINT (Ctrl+C)
