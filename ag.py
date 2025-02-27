@@ -24,7 +24,7 @@ client = OpenAI(
 
 def signal_handler(sig, frame):
     print()
-    print("Exiting AI mode.")
+    print("👋Exiting AI mode.")
     sys.exit(0)
 
 # Set the signal handler for SIGINT (Ctrl+C)
@@ -34,11 +34,11 @@ def ai_mode():
     print("Entering AI mode. Type your prompt (or 'exit' to quit):")
     while True:
         # Get user input
-        prompt = input("prompt> ")
+        prompt = input("🙋> ")
 
         # Check for exit condition
         if prompt.lower() in ["exit", "quit"]:
-            print("Exiting AI mode.")
+            print("👋Exiting AI mode.")
             break
 
         # Send request to DeepSeek API
@@ -52,7 +52,7 @@ def ai_mode():
                 stream=True
             )
             # Print the response
-            print("AI OUTPUT:\n", end="", flush=True)
+            print("DeepSeek🤖:", end="", flush=True)
             for chunk in stream:
                 if chunk.choices[0].delta.content is not None:
                     print(chunk.choices[0].delta.content, end="", flush=True)
