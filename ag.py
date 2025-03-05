@@ -35,6 +35,7 @@ def ai_mode():
     while True:
         # Get user input
         prompt = input("🙋> ")
+        print()  # Newline before the response
 
         # Check for exit condition
         if prompt.lower() in ["exit", "quit"]:
@@ -52,7 +53,7 @@ def ai_mode():
                 stream=True
             )
             # Print the response
-            print("DeepSeek🤖:", end="", flush=True)
+            print("🤖DeepSeek:\n", end="", flush=True)
             for chunk in stream:
                 if chunk.choices[0].delta.content is not None:
                     print(chunk.choices[0].delta.content, end="", flush=True)
