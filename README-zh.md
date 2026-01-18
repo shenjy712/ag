@@ -66,6 +66,9 @@ mv ag.py /usr/local/bin/ag
 
 # 把 .env 文件也移动到同样的目录
 mv .env /usr/local/bin/
+
+# 或者用下面的命令
+chmod +x ag.py && sudo mv ag.py /usr/local/bin/ag && sudo mv .env /usr/local/bin/
 ```
 
 - 到现在，大家就可以在命令行中使用 `ag` 命令调用 `DeepSeek:v3` 模型了。
